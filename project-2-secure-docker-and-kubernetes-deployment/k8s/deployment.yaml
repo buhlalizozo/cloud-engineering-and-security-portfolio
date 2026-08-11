@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: secure-flask-deployment
+  labels:
+    app: secure-flask-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: secure-flask-app
+  template:
+    metadata:
+      labels:
+        app: secure-flask-app
+    spec:
+      containers:
+        - name: secure-flask-app
+          image: secure-flask-app:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5000
+          securityContext:
+            runAsNonRoot: true
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "64Mi"
+            limits:
+              cpu: "250m"
+              memory: "128Mi"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 10
