@@ -96,5 +96,5 @@ Cloud security portfolio featuring AWS, Microsoft Sentinel, Terraform, Docker, K
 
 ## Estimated Portfolio Time
 
-Approximately  14 hours across 10 to 11 working days.
+Approximately  8 hours across 10 to 11 working days.
 
