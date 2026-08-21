@@ -5,7 +5,7 @@ Cloud security portfolio featuring AWS, Microsoft Sentinel, Terraform, Docker, K
 
 ## Project 1: Secure AWS Infrastructure with Terraform
 
-**Timeframe:** 4 hours  
+**Timeframe:** 2 hours  
 **Status:** Planned
 
 - Build secure AWS infrastructure using Terraform
@@ -20,7 +20,7 @@ Cloud security portfolio featuring AWS, Microsoft Sentinel, Terraform, Docker, K
 
 ## Project 2: Secure Docker and Kubernetes Deployment
 
-**Timeframe:** 3 hours  
+**Timeframe:** 2 hours  
 **Status:** Planned
 
 - Containerize a Python application with Docker
@@ -36,7 +36,7 @@ Cloud security portfolio featuring AWS, Microsoft Sentinel, Terraform, Docker, K
 
 ## Project 3: AWS SOC Detection and Incident Response
 
-**Timeframe:** 3 hours
+**Timeframe:** 1 hours
 **Status:** Completed
 
 - Enabled Amazon GuardDuty on the AWS account, with all protection features turned on
@@ -68,7 +68,7 @@ Cloud security portfolio featuring AWS, Microsoft Sentinel, Terraform, Docker, K
 
 ## Project 5: Automated Azure Security Remediation with Python
 
-**Timeframe:** TBD
+**Timeframe:** under 1 hour
 **Status:** Planned
 
 - Identify a common insecure Azure configuration to target: a Storage Account with public blob access enabled
@@ -96,5 +96,5 @@ Cloud security portfolio featuring AWS, Microsoft Sentinel, Terraform, Docker, K
 
 ## Estimated Portfolio Time
 
-Approximately  14 hours across 10 to 11 working days.
+Approximately  8 hours across 10 to 11 working days.
 
