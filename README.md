@@ -68,7 +68,7 @@ Cloud security portfolio featuring AWS, Microsoft Sentinel, Terraform, Docker, K
 
 ## Project 5: Automated Azure Security Remediation with Python
 
-**Timeframe:** TBD
+**Timeframe:** under 1 hour
 **Status:** Planned
 
 - Identify a common insecure Azure configuration to target: a Storage Account with public blob access enabled
