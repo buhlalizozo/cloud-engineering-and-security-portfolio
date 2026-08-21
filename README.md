@@ -5,7 +5,7 @@ Cloud security portfolio featuring AWS, Microsoft Sentinel, Terraform, Docker, K
 
 ## Project 1: Secure AWS Infrastructure with Terraform
 
-**Timeframe:** 8 hours  
+**Timeframe:** 4 hours  
 **Status:** Planned
 
 - Build secure AWS infrastructure using Terraform
@@ -20,7 +20,7 @@ Cloud security portfolio featuring AWS, Microsoft Sentinel, Terraform, Docker, K
 
 ## Project 2: Secure Docker and Kubernetes Deployment
 
-**Timeframe:** 10 hours  
+**Timeframe:** 3 hours  
 **Status:** Planned
 
 - Containerize a Python application with Docker
@@ -34,37 +34,52 @@ Cloud security portfolio featuring AWS, Microsoft Sentinel, Terraform, Docker, K
 
 ---
 
-## Project 3: Microsoft Sentinel SOC Detection and Investigation
+## Project 3: AWS SOC Detection and Incident Response
 
-**Timeframe:** 6 hours  
-**Status:** Planned
+**Timeframe:** 3 hours
+**Status:** Completed
 
-- Configure Microsoft Sentinel
-- Connect security logs
-- Write KQL investigation queries
-- Create an analytics rule
-- Generate a controlled security incident
-- Investigate the incident and document the timeline
-- Produce a SOC incident report
+- Enabled Amazon GuardDuty on the AWS account, with all protection features turned on
+- Enabled AWS Security Hub with essential security standards (vulnerability management, posture management, network reachability scanning)
+- Generated 410 sample GuardDuty findings to simulate real security events
+- Confirmed findings correctly propagated from GuardDuty into Security Hub (438 total findings visible)
+- Investigated a High severity finding: CredentialAccess:RDS/AnomalousBehavior.SuccessfulLogin
+- Documented the full investigation timeline — detection, investigation, response, and outcome
+- Produced a formal SOC incident report (INCIDENT-REPORT.md)
 
-**Tools:** Microsoft Azure, Microsoft Sentinel, KQL
+**Tools:** AWS GuardDuty, AWS Security Hub, AWS CLI
+
+---
+
+## Project 4: Serverless Automation with Azure Logic Apps and Functions
+
+**Timeframe:** Under 1 hour
+**Status:** Completed
+
+- Created an Azure Logic App to act as the automation trigger/orchestrator
+- Built an Azure Function to handle the processing logic
+- Connected the Logic App to the Function so the workflow runs automatically
+- Tested the workflow end-to-end to confirm it triggers and executes correctly
+- Documented the architecture and setup in the project README
+
+**Tools:** Microsoft Azure, Azure Logic Apps, Azure Functions
 
 ---
 
-## Project 4: Automated AWS Security Remediation with Python
+## Project 5: Automated Azure Security Remediation with Python
 
-**Timeframe:** 6 hours  
+**Timeframe:** TBD
 **Status:** Planned
 
-- Create a Python AWS Lambda function
-- Detect an insecure cloud configuration
-- Automatically correct the misconfiguration
-- Integrate EventBridge and SNS notifications
-- Test and document the remediation workflow
+- Identify a common insecure Azure configuration to target: a Storage Account with public blob access enabled
+- Write a Python script using the Azure SDK (azure-mgmt-storage) to scan Storage Accounts and detect any with public access enabled
+- Build an Azure Function that runs the detection script on a schedule (Timer Trigger)
+- Add remediation logic: when a misconfigured Storage Account is found, automatically disable public blob access via the SDK
+- Set up an Azure Monitor alert or Logic App to send a notification (email) whenever a remediation action runs
+- Test the workflow by intentionally creating a Storage Account with public access enabled, confirming the Function detects and fixes it automatically
+- Document the full workflow, architecture, and before/after evidence in the project README
 
-**Tools:** Python, AWS Lambda, Boto3, EventBridge, SNS
-
----
+**Tools:** Python, Azure Functions, Azure SDK for Python (azure-mgmt-storage), Azure Monitor
 
 ## Skills Demonstrated
 
@@ -81,5 +96,5 @@ Cloud security portfolio featuring AWS, Microsoft Sentinel, Terraform, Docker, K
 
 ## Estimated Portfolio Time
 
-Approximately 30 hours across 10 to 11 working days.
+Approximately  14 hours across 10 to 11 working days.
 
