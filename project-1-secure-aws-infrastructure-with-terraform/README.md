@@ -1,142 +1,123 @@
-# 01 — Secure AWS Cloud Infrastructure
+# 01 — Secure AWS Cloud Infrastructure with Terraform
 
 ## Overview
 
-This implementation demonstrates the deployment and security of foundational AWS cloud resources, with a focus on networking, identity and access management, secure storage, logging, and infrastructure security.
+This project demonstrates the deployment and security of foundational AWS cloud infrastructure using **Terraform as Infrastructure as Code (IaC)**.
 
-The environment was designed to demonstrate practical cloud engineering and security concepts using core AWS services.
+The environment focuses on cloud networking, compute, identity and access management, secure storage, logging, and infrastructure automation.
 
----
-
-## Objectives
-
-- Build a foundational AWS cloud environment
-- Configure secure network segmentation
-- Deploy and manage EC2 resources
-- Apply IAM roles and permissions
-- Configure secure storage using Amazon S3
-- Implement logging and auditing with AWS CloudTrail
-- Apply security controls using Security Groups
-- Validate the deployed infrastructure
-
----
-
-## Architecture
-
-The environment includes:
-
-- Amazon VPC
-- Public and private subnets
-- Amazon EC2
-- Security Groups
-- IAM roles and policies
-- Amazon S3
-- AWS CloudTrail
-- Logging and monitoring controls
-
-### Architecture Flow
-
-Internet  
-↓  
-VPC  
-↓  
-Public / Private Subnets  
-↓  
-EC2 Resources  
-↓  
-Security Controls  
-↓  
-Logging & Monitoring
+The goal was to build AWS infrastructure in a way that is **repeatable, secure, documented, and manageable through code**.
 
 ---
 
 ## Technologies Used
 
 - Amazon Web Services (AWS)
+- Terraform
 - Amazon VPC
 - Amazon EC2
-- AWS IAM
+- AWS Identity and Access Management (IAM)
 - Amazon S3
 - AWS CloudTrail
 - Security Groups
+- Git
+- GitHub
 
 ---
 
-## Implementation
+## Objectives
 
-### Networking
-
-Configured a Virtual Private Cloud to provide an isolated AWS network environment.
-
-The network was segmented using subnets to separate resources and reduce unnecessary exposure.
-
-### Compute
-
-Deployed Amazon EC2 resources within the configured network environment.
-
-Security Groups were used to control inbound and outbound traffic.
-
-### Identity and Access Management
-
-Configured IAM roles and permissions to provide controlled access to AWS resources.
-
-Permissions were designed around least-privilege principles.
-
-### Storage
-
-Configured Amazon S3 storage with security controls to reduce unintended public exposure.
-
-### Logging and Auditing
-
-Enabled AWS CloudTrail to capture API activity and provide visibility into actions performed within the AWS environment.
+- Provision AWS resources using Terraform
+- Create and configure an Amazon VPC
+- Configure network subnets
+- Deploy Amazon EC2 resources
+- Configure Security Groups
+- Configure IAM roles and permissions
+- Configure secure Amazon S3 storage
+- Enable AWS CloudTrail logging
+- Apply cloud security controls
+- Validate the Terraform configuration
+- Verify the deployed AWS infrastructure
 
 ---
 
-## Security Controls
+## Infrastructure as Code
 
-The implementation includes:
+Terraform was used as the primary **Infrastructure as Code** tool for defining and provisioning the AWS environment.
 
-- Least-privilege IAM access
-- Restricted Security Group rules
-- Network segmentation
-- Secure S3 configuration
-- Encryption
-- CloudTrail auditing
-- Controlled resource access
+Instead of relying only on manual configuration through the AWS Management Console, cloud resources were defined through Terraform configuration files.
 
----
+This approach demonstrates:
 
-## Validation
-
-The environment was validated by confirming:
-
-- VPC and subnet configuration
-- EC2 deployment
-- Security Group rules
-- IAM permissions
-- S3 security configuration
-- CloudTrail logging activity
+- Declarative infrastructure
+- Automated cloud provisioning
+- Reproducible deployments
+- Consistent resource configuration
+- Infrastructure validation
+- Version-controlled infrastructure
+- Reduced manual configuration
 
 ---
 
-## Troubleshooting
+## Terraform Workflow
 
-During implementation, cloud configuration and connectivity issues were reviewed by checking:
+The infrastructure was deployed using the standard Terraform workflow:
 
-- Security Group rules
-- Subnet configuration
-- Routing
-- IAM permissions
-- Resource configuration
-- AWS service logs
+```bash
+terraform init
+terraform validate
+terraform plan
+terraform apply
+```
 
-Troubleshooting was used to validate that resources were configured correctly and securely.
+### Workflow Purpose
+
+- `terraform init` — initializes the Terraform working directory and required providers
+- `terraform validate` — checks the Terraform configuration for syntax and configuration errors
+- `terraform plan` — previews the infrastructure changes Terraform will make
+- `terraform apply` — provisions the defined AWS infrastructure
 
 ---
 
-## Screenshots
+## Architecture
 
-Screenshots documenting the environment should be stored inside:
+The environment combines Terraform-based provisioning with AWS networking, compute, storage, identity, and logging services.
 
 ```text
-screenshots/
+                    Terraform
+                        |
+                        v
+               AWS Infrastructure
+                        |
+                        v
+                  Amazon VPC
+                        |
+              +---------+---------+
+              | |
+              v v
+           Subnets Security Groups
+              | |
+              +---------+---------+
+                        |
+                        v
+                   Amazon EC2
+                        |
+              +---------+---------+
+              | |
+              v v
+          Amazon S3 AWS CloudTrail
+              | |
+              v v
+        Secure Storage Logging & Auditing
+```
+
+### Architecture Components
+
+- **Terraform** — defines and provisions the AWS infrastructure
+- **Amazon VPC** — provides an isolated cloud network
+- **Subnets** — organize resources within the VPC
+- **Security Groups** — control inbound and outbound network traffic
+- **Amazon EC2** — provides compute resources
+- **Amazon S3** — provides secure cloud storage
+- **AWS IAM** — manages identity, roles, and access permissions
+- **AWS CloudTrail** — records AWS API activity for logging, auditing, and security investigations
