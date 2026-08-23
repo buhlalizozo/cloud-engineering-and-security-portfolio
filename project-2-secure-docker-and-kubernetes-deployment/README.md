@@ -1,102 +1,142 @@
-\# Project 2: Secure Docker and Kubernetes Deployment
+# 02 — Secure Docker & Kubernetes Deployment
 
+## Overview
 
+This project demonstrates the containerization and deployment of an application using **Docker and Kubernetes**, with a focus on workload configuration, application availability, resource management, and container security.
 
-A minimal Flask API containerized with Docker and deployed to Kubernetes, built with security hardening as the primary focus rather than the application logic itself.
+The environment was designed to demonstrate practical container engineering and orchestration skills using Docker, Kubernetes, and Minikube.
 
-
-
-\## Overview
-
-
-
-This project demonstrates secure containerization and orchestration practices:
-
-\- A lightweight Flask app with a health check endpoint
-
-\- A hardened Dockerfile (non-root user, minimal base image)
-
-\- Kubernetes manifests enforcing pod-level security controls
-
-\- Local deployment and verification via Minikube
-
-
-
-\## Architecture
-
-
-
-\- \*\*app.py\*\* — Flask API with `/` and `/health` endpoints
-
-\- \*\*Dockerfile\*\* — builds a container image using `python:3.12-slim`, running as a non-root user with a numeric UID
-
-\- \*\*k8s/deployment.yaml\*\* — Kubernetes Deployment with 2 replicas, strict security context, resource limits, and liveness/readiness probes
-
-\- \*\*k8s/service.yaml\*\* — NodePort Service exposing the app
-
-
-
-\## Security Measures
-
-
-
-\- \*\*Non-root execution\*\*: container runs as UID 1001, not root
-
-\- \*\*No privilege escalation\*\*: allowPrivilegeEscalation set to false
-
-\- \*\*Read-only root filesystem\*\*: readOnlyRootFilesystem set to true
-
-\- \*\*Dropped Linux capabilities\*\*: all capabilities removed
-
-\- \*\*Resource limits\*\*: CPU and memory requests/limits set to prevent resource exhaustion
-
-\- \*\*Health checks\*\*: liveness and readiness probes on /health
-
-
-
-\## How to Run Locally
-
-
-
-1\. Build the image:
-
-
-
-docker build -t secure-flask-app:latest .
-
-
-
-2\. Point your terminal at Minikube's Docker environment and rebuild inside it:
-
-
-
-minikube -p minikube docker-env | Invoke-Expression
-
-docker build -t secure-flask-app:latest .
-
-
-
-3\. Deploy to Kubernetes:
-
-
-
-kubectl apply -f k8s/deployment.yaml
-
-kubectl apply -f k8s/service.yaml
-
-
-
-4\. Access the app:
-
-
-
-minikube service secure-flask-service --url
-
-
-
-\## What This Demonstrates
-
-
-
-Cloud security and SOC-relevant skills: container hardening, least-privilege configuration, Kubernetes security contexts, and secure-by-default infrastructure design.
-
+The goal was to deploy an application in a way that is **portable, reproducible, secure, and manageable through container orchestration**.
+
+---
+
+## Technologies Used
+
+- Docker
+- Kubernetes
+- Minikube
+- Python
+- kubectl
+- Docker CLI
+- Kubernetes Deployments
+- Kubernetes Services
+- ConfigMaps
+- Secrets
+- Liveness Probes
+- Readiness Probes
+
+---
+
+## Objectives
+
+- Containerize an application using Docker
+- Build and run a Docker image
+- Deploy the application into Kubernetes
+- Configure Kubernetes Deployments
+- Expose the application using Kubernetes Services
+- Configure application settings using ConfigMaps
+- Manage sensitive configuration using Kubernetes Secrets
+- Configure liveness probes
+- Configure readiness probes
+- Apply CPU and memory resource limits
+- Run the container as a non-root user
+- Validate application availability and workload health
+
+---
+
+## Containerization & Orchestration
+
+Docker was used to package the application and its dependencies into a portable container image.
+
+Kubernetes was then used to deploy and manage the containerized workload.
+
+This approach demonstrates:
+
+- Application containerization
+- Portable application packaging
+- Declarative workload configuration
+- Container orchestration
+- Automated workload management
+- Application health monitoring
+- Resource control
+- Secure container configuration
+
+---
+
+## Deployment Workflow
+
+The application deployment followed a Docker and Kubernetes workflow:
+
+```bash
+docker build -t secure-app .
+docker run secure-app
+
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+kubectl get pods
+kubectl get services
+```
+
+### Workflow Purpose
+
+- `docker build` — creates the Docker image from the application and Dockerfile
+- `docker run` — validates that the containerized application runs successfully
+- `kubectl apply` — deploys Kubernetes configuration files
+- `kubectl get pods` — verifies that application pods are running
+- `kubectl get services` — confirms that the Kubernetes Service is available
+
+---
+
+## Architecture
+
+The environment combines Docker containerization with Kubernetes workload orchestration.
+
+```text
+                Application Source Code
+                         |
+                         v
+                     Dockerfile
+                         |
+                         v
+                   Docker Image
+                         |
+                         v
+                    Kubernetes
+                         |
+                 +-------+-------+
+                 | |
+                 v v
+             Deployment Service
+                 |
+                 v
+               Pods
+                 |
+        +--------+--------+
+        | |
+        v v
+    ConfigMap Secret
+        |
+        v
+Application Configuration
+        |
+        v
+Health Checks + Resource Controls
+        |
+        v
+Running Containerized Application
+```
+
+### Architecture Components
+
+- **Application Source Code** — contains the application logic
+- **Dockerfile** — defines how the application container image is built
+- **Docker Image** — packages the application and required dependencies
+- **Kubernetes Deployment** — manages application pods and desired workload state
+- **Kubernetes Service** — exposes the application to network traffic
+- **Pods** — run the containerized application
+- **ConfigMap** — stores non-sensitive application configuration
+- **Secret** — stores sensitive configuration data
+- **Liveness Probe** — checks whether the application is running correctly
+- **Readiness Probe** — determines whether the application is ready to receive traffic
+- **Resource Limits** — control CPU and memory consumption
+- **Non-root Execution** — reduces container privilege and improves workload security
