@@ -380,9 +380,9 @@ The investigation included the following steps:
 
 6\. Reviewed the action type and login result
 
-7\. Confirmed the finding propagated into AWS Security Hub
+7\. Confirmed GuardDuty and Security Hub integration was active; this specific sample finding was not individually      forwarded into Security Hub, which is expected behavior for GuardDuty sample findings
 
-8\. Verified the finding appeared within the expected synchronization window
+8\. Confirmed this behaviour is consistent with GuardDuty's documented handling of sample findings
 
 9\. Confirmed that GuardDuty monitoring was active and generating findings
 
@@ -771,4 +771,66 @@ Potential future improvements include:
 \- Map findings to MITRE ATT\&CK techniques
 
 \- Expand the environment into a larger AWS SOC monitoring lab
+
+
+
+
+
+\### GuardDuty Finding Overview
+
+
+
+
+
+!\[GuardDuty Finding](screenshots/01-guardduty-finding.png)
+
+
+
+
+
+
+
+\### RDS Finding Details
+
+
+
+
+
+!\[RDS Finding Details](screenshots/02-rds-finding-details.png)
+
+
+
+
+
+
+
+\### Security Hub Threat Summary
+
+
+
+
+
+!\[Security Hub Summary](screenshots/03-security-hub-summary.png)
+
+
+
+
+
+
+
+\### Sample Finding Confirmation
+
+
+
+
+
+!\[Sample Finding](screenshots/04-investigation-details.png)
+
+
+
+
+
+
+
+
 
