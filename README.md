@@ -1,100 +1,448 @@
-# Cloud Engineering and Security portfolio
-Cloud security portfolio featuring AWS, Microsoft Sentinel, Terraform, Docker, Kubernetes, SOC monitoring, incident response and automated remediation
+# Cloud Engineering & Security Portfolio
+
+Hands-on cloud engineering and security portfolio focused on designing, securing, automating, monitoring, and troubleshooting cloud environments across **Amazon Web Services (AWS)** and **Microsoft Azure**.
+
+This portfolio demonstrates practical experience with **cloud infrastructure, cloud security, containerization, serverless computing, automation, incident response, monitoring, and Infrastructure as Code**.
 
 ---
 
-## Project 1: Secure AWS Infrastructure with Terraform
+## Core Technologies
 
-**Timeframe:** 2 hours  
-**Status:** Planned
+### Cloud Platforms
 
-- Build secure AWS infrastructure using Terraform
-- Create a VPC, subnet, EC2 instance, IAM role, and security groups
-- Configure encrypted S3 storage
-- Enable CloudTrail logging
-- Add an architecture diagram and technical documentation
+- Amazon Web Services (AWS)
+- Microsoft Azure
 
-**Tools:** AWS, Terraform
+### Infrastructure, DevOps & Automation
 
----
+- Terraform
+- Docker
+- Kubernetes
+- Minikube
+- Git
+- GitHub
+- Python
 
-## Project 2: Secure Docker and Kubernetes Deployment
+### Security & Monitoring
 
-**Timeframe:** 2 hours  
-**Status:** Planned
+- AWS GuardDuty
+- AWS Security Hub
+- AWS CloudTrail
+- AWS Identity and Access Management (IAM)
+- Azure Monitor
+- Cloud security configuration
+- Security monitoring
+- Incident investigation
+- Automated remediation
 
-- Containerize a Python application with Docker
-- Deploy it to a local Kubernetes cluster using Minikube
-- Create a Deployment, Service, ConfigMap, and Secret
-- Configure liveness and readiness probes
-- Apply resource limits and non-root container settings
-- Add basic Kubernetes security controls
+### Serverless & Cloud Automation
 
-**Tools:** Docker, Kubernetes, Minikube, Python
-
----
-
-## Project 3: AWS SOC Detection and Incident Response
-
-**Timeframe:** 1 hours
-**Status:** Completed
-
-- Enabled Amazon GuardDuty on the AWS account, with all protection features turned on
-- Enabled AWS Security Hub with essential security standards (vulnerability management, posture management, network reachability scanning)
-- Generated 410 sample GuardDuty findings to simulate real security events
-- Confirmed findings correctly propagated from GuardDuty into Security Hub (438 total findings visible)
-- Investigated a High severity finding: CredentialAccess:RDS/AnomalousBehavior.SuccessfulLogin
-- Documented the full investigation timeline — detection, investigation, response, and outcome
-- Produced a formal SOC incident report (INCIDENT-REPORT.md)
-
-**Tools:** AWS GuardDuty, AWS Security Hub, AWS CLI
+- Azure Functions
+- Azure Logic Apps
+- Azure SDK for Python
 
 ---
 
-## Project 4: Serverless Automation with Azure Logic Apps and Functions
+# Engineering Portfolio
 
-**Timeframe:** Under 1 hour
-**Status:** Completed
+## 01 — Secure AWS Cloud Infrastructure
 
-- Created an Azure Logic App to act as the automation trigger/orchestrator
-- Built an Azure Function to handle the processing logic
-- Connected the Logic App to the Function so the workflow runs automatically
-- Tested the workflow end-to-end to confirm it triggers and executes correctly
-- Documented the architecture and setup in the project README
+AWS cloud infrastructure implementation focused on deploying and securing foundational AWS resources.
 
-**Tools:** Microsoft Azure, Azure Logic Apps, Azure Functions
+### Technical Focus
+
+- Amazon VPC
+- Public and private subnet configuration
+- Amazon EC2
+- IAM roles and permissions
+- Security Groups
+- Amazon S3
+- Encryption
+- AWS CloudTrail
+- Cloud logging and auditing
+
+### Engineering Concepts
+
+- Network segmentation
+- Identity and access management
+- Least-privilege access
+- Secure storage
+- Infrastructure monitoring
+- Cloud auditing
+- Secure cloud architecture
+
+### Technologies
+
+`AWS` `Amazon VPC` `EC2` `IAM` `S3` `CloudTrail`
 
 ---
 
-## Project 5: Automated Azure Security Remediation with Python
+## 02 — Secure Docker & Kubernetes Deployment
 
-**Timeframe:** under 1 hour
-**Status:** Planned
+Containerized application deployment demonstrating Docker containerization, Kubernetes orchestration, workload configuration, health monitoring, and container security.
 
-- Identify a common insecure Azure configuration to target: a Storage Account with public blob access enabled
-- Write a Python script using the Azure SDK (azure-mgmt-storage) to scan Storage Accounts and detect any with public access enabled
-- Build an Azure Function that runs the detection script on a schedule (Timer Trigger)
-- Add remediation logic: when a misconfigured Storage Account is found, automatically disable public blob access via the SDK
-- Set up an Azure Monitor alert or Logic App to send a notification (email) whenever a remediation action runs
-- Test the workflow by intentionally creating a Storage Account with public access enabled, confirming the Function detects and fixes it automatically
-- Document the full workflow, architecture, and before/after evidence in the project README
+### Technical Focus
 
-**Tools:** Python, Azure Functions, Azure SDK for Python (azure-mgmt-storage), Azure Monitor
+- Docker
+- Kubernetes
+- Minikube
+- Kubernetes Deployments
+- Kubernetes Services
+- ConfigMaps
+- Secrets
+- Liveness probes
+- Readiness probes
+- Resource limits
 
-## Skills Demonstrated
+### Security Controls
 
-- Cloud engineering
-- Cloud security
-- SOC monitoring and investigation
-- Infrastructure as code
-- Containerization and orchestration
-- Security automation
+- Non-root container execution
+- Resource restrictions
+- Kubernetes Secrets
+- Application health monitoring
+- Secure workload configuration
+
+### Engineering Concepts
+
+- Containerization
+- Container orchestration
+- Application deployment
+- Workload configuration
+- Container security
+- Health monitoring
+
+### Technologies
+
+`Docker` `Kubernetes` `Minikube` `Python`
+
+---
+
+## 03 — AWS SOC Detection & Incident Response
+
+Cloud security operations implementation focused on threat detection, security monitoring, investigation, and incident response within AWS.
+
+### Technical Focus
+
+- Amazon GuardDuty
+- AWS Security Hub
+- Security findings
+- Threat detection
+- Security posture monitoring
+- Incident investigation
+- Cloud security analysis
+
+### Incident Response Workflow
+
+**Detect → Investigate → Validate → Respond → Document**
+
+The environment was used to generate and investigate simulated security findings, review security events, assess potential impact, and document the incident response process.
+
+### Engineering Concepts
+
+- Security Operations
+- Threat detection
+- Security monitoring
+- Incident investigation
 - Incident response
-- Technical documentation
+- Security event analysis
+
+### Technologies
+
+`AWS GuardDuty` `AWS Security Hub` `AWS Cloud Security`
 
 ---
 
-## Estimated Portfolio Time
+## 04 — Serverless Automation with Azure Logic Apps & Functions
 
-Approximately  8 hours across 10 to 11 working days.
+Serverless cloud automation implementation demonstrating event-driven architecture using Microsoft Azure.
+
+### Architecture
+
+**Trigger → Azure Logic App → Azure Function → Processing → Response**
+
+### Technical Focus
+
+- Azure Logic Apps
+- Azure Functions
+- Serverless architecture
+- Workflow orchestration
+- Event-driven automation
+- Python processing logic
+- Cloud service integration
+
+### Engineering Concepts
+
+- Event-driven computing
+- Serverless application design
+- Automated workflows
+- Cloud integration
+- Application processing
+- Workflow automation
+
+### Technologies
+
+`Microsoft Azure` `Azure Logic Apps` `Azure Functions` `Python`
+
+---
+
+## 05 — Automated Azure Security Remediation with Python
+
+Cloud security automation implementation designed to detect insecure Azure Storage configurations and automatically remediate them.
+
+### Security Scenario
+
+A storage account with public blob access enabled can introduce unnecessary exposure and increase cloud security risk.
+
+The solution uses Python and Azure services to detect the insecure configuration and automatically apply remediation.
+
+### Architecture
+
+**Azure Storage Account**  
+↓  
+**Azure Function Timer Trigger**  
+↓  
+**Python Security Scanner**  
+↓  
+**Azure SDK**  
+↓  
+**Misconfiguration Detection**  
+↓  
+**Automatic Remediation**  
+↓  
+**Azure Monitor / Notification**
+
+### Technical Focus
+
+- Python
+- Azure Functions
+- Azure SDK for Python
+- Azure Storage
+- Azure Monitor
+- Security automation
+- Configuration scanning
+- Automated remediation
+
+### Security Controls
+
+- Detection of publicly accessible storage
+- Automated configuration assessment
+- Programmatic security remediation
+- Scheduled security checks
+- Monitoring and alerting
+
+### Engineering Concepts
+
+- Cloud security automation
+- Continuous configuration assessment
+- Automated remediation
+- Python cloud automation
+- Security monitoring
+- Secure cloud configuration
+
+### Technologies
+
+`Python` `Azure Functions` `Azure SDK` `Azure Storage` `Azure Monitor`
+
+---
+
+## 06 — Secure Azure Storage Provisioning with Terraform
+
+**Status: In Development**
+
+Infrastructure as Code implementation focused on securely provisioning Azure resources using Terraform.
+
+The environment recreates Azure Storage infrastructure through code instead of relying on manual portal configuration, with security controls applied from deployment.
+
+### Technical Focus
+
+- Terraform
+- Azure Resource Group
+- Azure Storage Account
+- Terraform variables
+- Terraform outputs
+- Provider configuration
+- Secure-by-default infrastructure
+- Public blob access disabled by default
+- Infrastructure validation
+- Automated provisioning
+
+### Terraform Workflow
+
+**terraform init → terraform validate → terraform plan → terraform apply**
+
+### Security Controls
+
+- Public blob access disabled by default
+- Reproducible infrastructure configuration
+- Controlled deployment configuration
+- Secure resource provisioning
+
+### Engineering Concepts
+
+- Infrastructure as Code
+- Declarative infrastructure
+- Reproducible deployments
+- Secure cloud provisioning
+- Configuration automation
+- Infrastructure validation
+
+### Technologies
+
+`Terraform` `Microsoft Azure` `Azure Storage` `Infrastructure as Code`
+
+---
+
+## 07 — Secure Production-Style Cloud Platform
+
+**Status: Flagship Build — In Development**
+
+End-to-end cloud engineering environment designed to integrate infrastructure provisioning, cloud security, containerization, CI/CD, automation, monitoring, and operational practices into a single production-style platform.
+
+### Planned Architecture
+
+**GitHub**  
+↓  
+**CI/CD Pipeline**  
+↓  
+**Terraform Infrastructure Provisioning**  
+↓  
+**Cloud Environment**  
+↓  
+**Containerized Application**  
+↓  
+**Kubernetes / Managed Runtime**  
+↓  
+**Monitoring + Logging + Security Controls**
+
+### Technical Focus
+
+- Terraform
+- Infrastructure as Code
+- Cloud networking
+- IAM / RBAC
+- Docker
+- Kubernetes
+- GitHub Actions
+- CI/CD
+- Python automation
+- Secrets management
+- Logging
+- Monitoring
+- Security controls
+- Vulnerability checks
+- Deployment validation
+- Architecture documentation
+
+### Security Focus
+
+- Least-privilege access
+- Secure networking
+- Secrets management
+- Secure container configuration
+- Infrastructure security
+- Logging and monitoring
+- Security validation
+- Automated security controls
+
+### Engineering Concepts
+
+- End-to-end cloud architecture
+- Infrastructure automation
+- Secure cloud deployment
+- Container orchestration
+- CI/CD automation
+- Monitoring and observability
+- DevSecOps
+- Production-style infrastructure design
+
+### Technologies
+
+`Terraform` `Docker` `Kubernetes` `GitHub Actions` `Python` `AWS` `Azure`
+
+---
+
+# Security Engineering Approach
+
+Security is incorporated throughout the portfolio rather than treated as a separate component.
+
+The work demonstrates principles including:
+
+- Least-privilege access
+- Identity and access management
+- Network segmentation
+- Secure cloud storage
+- Restricted public access
+- Encryption
+- Logging and auditing
+- Security monitoring
+- Threat detection
+- Incident investigation
+- Automated remediation
+- Secure container configuration
+- Infrastructure security
+
+---
+
+# Engineering Skills Demonstrated
+
+### Cloud Engineering
+
+- AWS infrastructure
+- Azure infrastructure
+- Cloud networking
+- Compute
+- Storage
+- Monitoring
+- Serverless architecture
+
+### Cloud Security
+
+- Identity and access management
+- Security monitoring
+- Threat detection
+- Incident investigation
+- Cloud configuration security
+- Automated remediation
+
+### Infrastructure & DevOps
+
+- Terraform
+- Infrastructure as Code
+- Docker
+- Kubernetes
+- Git
+- GitHub
+- CI/CD
+
+### Automation
+
+- Python
+- Azure Functions
+- Azure Logic Apps
+- Azure SDK for Python
+- Security automation
+- Cloud workflow automation
+
+### Engineering Practices
+
+- Architecture documentation
+- Technical documentation
+- Testing
+- Validation
+- Troubleshooting
+- Secure-by-default configuration
+- Reproducible infrastructure
+
+---
+
+# Current Focus
+
+Building deeper practical experience across:
+
+**Cloud Engineering • Cloud Security • Infrastructure as Code • Automation • DevOps • Containers**
+
+with a focus on designing cloud environments that are:
+
+**Secure • Automated • Reproducible • Observable • Scalable • Maintainable**
+
 
