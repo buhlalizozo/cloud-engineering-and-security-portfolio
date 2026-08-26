@@ -3,8 +3,10 @@ from azure.mgmt.storage import StorageManagementClient
 from azure.mgmt.storage.models import StorageAccountUpdateParameters
 
 # --- Configuration ---
-SUBSCRIPTION_ID = "ad4ecac9-e6af-48fa-868a-0cd67594ce71"
-RESOURCE_GROUP = "rg-project5-remediation"
+import os
+SUBSCRIPTION_ID = os.environ.get("AZURE_SUBSCRIPTION_ID")
+RESOURCE_GROUP = os.environ.get("AZURE_RESOURCE_GROUP", "rg-project5-remediation")
+
 
 # --- Authenticate using Azure CLI credentials ---
 credential = AzureCliCredential()
